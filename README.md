@@ -1,4 +1,6 @@
 # Project
+>[DevOps Assignment](https://github.com/adaltas/ece-devops-2021-fall/blob/master/PROJECT.md)
+
 This project let us apply what we have learn since the begining of the year
 
 ## Screenshots
