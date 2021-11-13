@@ -6,7 +6,7 @@ name: Develop CI
 on:
   push:
     branches: 
-      - '!main'
+      - 'develop'
 jobs:
   # CI part
   test:
