@@ -5,8 +5,8 @@ This project let us apply what we have learn since the begining of the year
 
 ## Screenshots
 ### CI/CD
-![Github Action](./image/githubAction.png)
-![Heroku Integration](./image/heroku.png)
+![Github Action](./img/githubAction.png)
+![Heroku Integration](./img/heroku.png)
 
 
 ## Instructions
