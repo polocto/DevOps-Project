@@ -1,0 +1,8 @@
+---
+- hosts: devops_server
+  become: true
+
+  roles:
+  - name: Environnement installation
+    role: devops/install
+    tags: install

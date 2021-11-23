@@ -1,0 +1,29 @@
+---
+- name: Install dependencies
+  yum:
+    name:
+      - curl
+      - wget
+      - tar
+      - gcc
+      - tcl
+    state: latest
+
+- name: Add new repo for nodejs
+  shell: curl -sL https://rpm.nodesource.com/setup_16.x | sudo -E bash -
+
+- name: Install NodeJS
+  yum:
+    name: 
+      - nodejs
+    state: latest
+
+- name: Install Redis
+  shell: >
+    wget http://download.redis.io/redis-stable.tar.gz;
+    tar xvzf redis-stable.tar.gz; 
+    cd redis-stable; 
+    make install;
+
+# - name: Run Redis
+#   shell: redis-server &;
