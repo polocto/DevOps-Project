@@ -3,5 +3,5 @@ kind: ConfigMap
 metadata:
   name: projet-devops-configmap
 data:
-  redis_host: redis
+  redis_host: "redis"
   redis_port: "6379"
