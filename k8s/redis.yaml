@@ -14,11 +14,18 @@ spec:
       labels:
         app: redis-deployment
     spec:
+      volumes:
+        - name: projet-devops-pv
+          persistentVolumeClaim:
+            claimName: projet-devops-pv-claim
       containers:
         - name: redis
           image: redis
           ports:
             - containerPort: 6379
+          volumeMounts:
+            - mountPath: /usr/share/projetDevops/
+              name: projet-devops-pv
 ---
 apiVersion: v1
 kind: Service

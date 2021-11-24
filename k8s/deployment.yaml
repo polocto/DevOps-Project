@@ -14,18 +14,11 @@ spec:
       labels:
         app: projet-devops
     spec:
-      volumes:
-        - name: projet-devops-pv
-          persistentVolumeClaim:
-            claimName: projet-devops-pv-claim
       containers:
         - name: projet-devops
           image: polocto/projet-devops
           ports:
             - containerPort: 3000
-          volumeMounts:
-            - mountPath: /usr/share/projetDevops/
-              name: projet-devops-pv
           env:
             - name: REDIS_HOST
               valueFrom:
