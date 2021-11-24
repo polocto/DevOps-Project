@@ -1,0 +1,53 @@
+apiVersion: apps/v1 
+kind: Deployment
+metadata:
+  name: projet-devops-deployment
+  labels:
+    app: projet-devops
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: projet-devops
+  template:
+    metadata:
+      labels:
+        app: projet-devops
+    spec:
+      volumes:
+        - name: projet-devops-pv
+          persistentVolumeClaim:
+            claimName: projet-devops-pv-claim
+      containers:
+        - name: projet-devops
+          image: polocto/projet-devops
+          ports:
+            - containerPort: 3000
+          volumeMounts:
+            - mountPath: /usr/share/projetDevops/
+              name: projet-devops-pv
+          env:
+            - name: REDIS_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: projet-devops-configmap
+                  key: redis_host
+            - name: REDIS_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: projet-devops-configmap
+                  key: redis_port
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: projet-devops-service
+spec:
+  selector:
+    app: projet-devops
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3000
+      nodePort: 30000
