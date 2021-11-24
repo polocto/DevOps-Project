@@ -61,7 +61,7 @@ minikube service projet-devops-service
 cd ..
 ```
 
-You will need to wait until all pods are running befor you get to see the page.
+You will need to wait until all pods are running before you get to see the page.
 See pods advancement use the following command.
 
 ```sh
