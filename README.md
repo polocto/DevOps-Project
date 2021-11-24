@@ -47,6 +47,8 @@ docker-compose up
 ## Platforms & Tools
 - [Github Action](https://github.com/polocto/Project-SI/actions)
 - [Heroku](https://dashboard.heroku.com/apps)
+- Vagrant *(centos/7)*
+- [Docker Hub](https://hub.docker.com)
 
 ## Bonus
 
