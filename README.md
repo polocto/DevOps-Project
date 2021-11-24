@@ -45,6 +45,7 @@ docker build -t projet-devops .
 ```sh
 docker-compose up
 ```
+Server on http://localhost:5000
 
 - Kubernertes
 
