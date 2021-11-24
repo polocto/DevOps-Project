@@ -25,9 +25,22 @@ git clone git@github.com:polocto/Project-SI.git
 gh repo clone polocto/Project-SI
 ```
 - [Install dependencies for userapi](./userapi/README.md#installation)
+- Install docker on ubuntu
+```sh
+sudo apt install docker.io
+sudo apt install docker-compose
+```
 
 ### Usage
 - [Start userapi](./userapi/README.md#usage)
+- Build docker image
+```sh
+docker build -t projet-devops .
+```
+- Using Docker Compose
+```sh
+docker-compose up
+```
 ### Test
 - [Test userapi](./userapi/README.md#testing)
 
