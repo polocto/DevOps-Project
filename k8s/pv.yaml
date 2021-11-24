@@ -5,9 +5,9 @@ metadata:
   labels:
     type: projet-devops-pv
 spec:
-  storageClassName: manual
+#  storageClassName: manual
   capacity:
-    storage: 10Gi
+    storage: 3Gi
   accessModes:
     - ReadWriteOnce
   hostPath:
