@@ -26,6 +26,8 @@ gh repo clone polocto/Project-SI
 ```
 - [Install dependencies for userapi](./userapi/README.md#installation)
 
+- [Install Vagrant](iac/README.md#prerequisite)
+
 - [Install Docker](https://www.docker.com/get-started)
 
 - [Install Minikube](https://minikube.sigs.k8s.io/docs/start/) for Kubernetes
@@ -34,7 +36,9 @@ gh repo clone polocto/Project-SI
 ### Usage
 - [Start userapi](./userapi/README.md#usage)
 
-- Build docker image
+- [Use Vagrant](iac/README.md#usage)
+
+- Build Docker image
 
 ```sh
 docker build -t projet-devops .
@@ -47,30 +51,7 @@ docker-compose up
 ```
 Server on http://localhost:5000
 
-- Kubernertes
-
-```sh
-cd k8s
-minikube start
-kubectl apply -f pv.yaml
-kubectl apply -f pv-claim.yaml
-kubectl apply -f redis.yaml
-kubectl apply -f config-map.yaml
-kubectl apply -f deployment.yaml
-minikube service projet-devops-service
-cd ..
-```
-
-You will need to wait until all pods are running before you get to see the page.
-See pods advancement use the following command.
-
-```sh
-kubectl get pod --watch
-```
-
-To quit `crtl+C`
-
-Once every pods are running, refresh the page.
+- [Use a Kubernertes cluster](./k8s/README.md#usage)
 
 
 ### Test
@@ -79,8 +60,9 @@ Once every pods are running, refresh the page.
 ## Platforms & Tools
 - [Github Action](https://github.com/polocto/Project-SI/actions)
 - [Heroku](https://dashboard.heroku.com/apps)
-- Vagrant *(centos/7)*
+- [Vagrant *(centos/7)*](https://www.vagrantup.com/)
 - [Docker Hub](https://hub.docker.com)
+- [Kubernetes](https://kubernetes.io/)
 
 ## Bonus
 
