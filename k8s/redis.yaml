@@ -5,7 +5,7 @@ metadata:
   labels:
     app: redis-deployment
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: redis-deployment
@@ -24,7 +24,7 @@ spec:
           ports:
             - containerPort: 6379
           volumeMounts:
-            - mountPath: /redis-master-data
+            - mountPath: /data
               name: my-vol
 ---
 apiVersion: v1

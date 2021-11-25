@@ -5,10 +5,12 @@ metadata:
   labels:
     type: projet-devops-pv
 spec:
-#  storageClassName: manual
+  storageClassName: standard
+  persistentVolumeReclaimPolicy: Retain
   capacity:
     storage: 3Gi
   accessModes:
     - ReadWriteOnce
   hostPath:
-    path: "/mnt/sda1/data"
+    path: /mnt/data
+    type: DirectoryOrCreate
