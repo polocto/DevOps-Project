@@ -1,29 +1,34 @@
 ---
-- name: Install dependencies
-  yum:
-    name:
-      - curl
-      - wget
-      - tar
-      - gcc
-      - tcl
-    state: latest
+# - name: "Add nodejs 16.x ppa for apt repo"
+#   get_url:
+#     url: https://nodejs.org/dist/v16.13.0/node-v16.13.0-linux-x64.tar.xz
+#     dest: /tmp
+# - name: Unzip NodeJS
+#   unarchive:
+#     src: /tmp/node-v16.13.0-linux-x64.tar.xz
+#     dest: /tmp
 
-- name: Add new repo for nodejs
-  shell: curl -sL https://rpm.nodesource.com/setup_16.x | sudo -E bash -
+- name: Inatll nodejs
+  shell: curl -L https://raw.githubusercontent.com/tj/n/master/bin/n -o n; bash n lts; npm install -g n
+  args:
+    chdir: /tmp
 
-- name: Install NodeJS
-  yum:
-    name: 
-      - nodejs
-    state: latest
+- name: Install app Dependencies
+  npm: 
+    path: /home/vagrant/userapi
+    ci: yes
 
-- name: Install Redis
-  shell: >
-    wget http://download.redis.io/redis-stable.tar.gz;
-    tar xvzf redis-stable.tar.gz; 
-    cd redis-stable; 
-    make install;
+- name: Download Redis-Stable
+  get_url:
+    url: http://download.redis.io/redis-stable.tar.gz
+    dest: /tmp
 
-# - name: Run Redis
-#   shell: redis-server &;
+- name: Unzip Redis-Stable
+  unarchive:
+    src: /tmp/redis-stable.tar.gz
+    dest: /tmp
+
+- name: Run install on redis-stable
+  make:
+    chdir: /tmp/redis-stable
+    target: install

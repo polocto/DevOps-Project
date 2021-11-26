@@ -1,0 +1,7 @@
+- name: Redis-Server
+  shell: redis-server;
+
+- name: Lauch App
+  shell: npm start
+  args:
+    chdir: /home/vagrant/userapi
