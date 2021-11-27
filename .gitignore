@@ -1,3 +1,4 @@
 node_modules
 *.log
 .vagrant
+istio-1.12.0
