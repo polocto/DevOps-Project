@@ -1,14 +1,5 @@
 ---
-# - name: "Add nodejs 16.x ppa for apt repo"
-#   get_url:
-#     url: https://nodejs.org/dist/v16.13.0/node-v16.13.0-linux-x64.tar.xz
-#     dest: /tmp
-# - name: Unzip NodeJS
-#   unarchive:
-#     src: /tmp/node-v16.13.0-linux-x64.tar.xz
-#     dest: /tmp
-
-- name: Inatll nodejs
+- name: Install nodejs
   shell: curl -L https://raw.githubusercontent.com/tj/n/master/bin/n -o n; bash n lts; npm install -g n
   args:
     chdir: /tmp
