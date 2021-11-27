@@ -2,3 +2,4 @@ node_modules
 *.log
 .vagrant
 iac/playbooks/n
+istio-1.12.0
