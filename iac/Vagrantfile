@@ -29,8 +29,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     server.vm.provision "ansible_local" do |ansible|
       ansible.playbook = "playbooks/run.yml"
-      ansible.tags = "install"
-      # ansible.tags = "run"
     end
 
   end

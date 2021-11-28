@@ -16,17 +16,23 @@ If you don't have any can install [VirtualBox](https://www.virtualbox.org/wiki/D
     ```sh
     Disable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-All
     ```
-3. 4. Clone the current Git repository and go to `iac/` folder.
+3. Clone the current Git repository and go to `iac/` folder.
 
 ## Usage
 1. Create a virtual machine. Run the command:
 ```sh
 vagrant up
 ```
+Open in your browser the URL - http://20.20.20.2
 
-2. Enter inside the VM via SSH:
+2. Shutdown the VM
 ```sh
-vagrant ssh centos_server
+vagrant halt
+```
+
+3. Delete th VM
+```sh
+vagrant destroy
 ```
 
 ## Authors
