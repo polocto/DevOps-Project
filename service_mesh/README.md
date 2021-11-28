@@ -12,6 +12,7 @@
  curl -L https://istio.io/downloadIstio | sh -
  cd istio-1.12.0
  export PATH=$PWD/bin:$PATH
+ cd ../
 ```
 
 - Install Istio to your project & add a namespace label to instruct Istio to automatically inject
