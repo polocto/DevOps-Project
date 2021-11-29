@@ -1,0 +1,7 @@
+- name: Test Service
+  command: npm test
+  register: app_health
+
+- name: Print App Health
+  debug:
+    msg: "{{ app_health.content }}"
