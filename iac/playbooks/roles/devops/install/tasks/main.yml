@@ -19,9 +19,3 @@
   npm: 
     path: /home/vagrant/userapi
     ci: yes
-
-# - name: Launch App
-#   command: npm start &
-#   ignore_errors: yes
-#   args:
-#     chdir: /home/vagrant/userapi
