@@ -13,3 +13,7 @@
   
   - role: devops/healthchecks
     tags: checks
+
+  - name: Run App
+    role: devops/run
+    tags: run

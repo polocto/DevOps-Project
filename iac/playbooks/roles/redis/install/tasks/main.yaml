@@ -13,6 +13,7 @@
     chdir: /tmp/redis-stable
     target: install
 
-# - name: Run Redis Server
-#   command: redis-server &
-#   ignore_errors: yes
+- name: Run Redis Server
+  command: redis-server
+  async: 1000000000
+  poll: 0
