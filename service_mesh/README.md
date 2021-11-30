@@ -29,9 +29,11 @@ Result :
 
 ```
  kubectl apply -f kubernetes-manifest.yaml
+ kubectl apply -f gateway.yaml
 ```
 
 ![DeployementResult](/img/DeployementResult.png)
+![DeployementResult1](/img/Depl.png)
 
 - Wait that all the pods run & check the services
 
