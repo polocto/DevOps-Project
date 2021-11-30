@@ -3,9 +3,17 @@
   become: true
 
   roles:
-  - name: Environnement installation
+  - name: Redis install
+    role: redis/install
+    tags: install
+  
+  - name: App installation
     role: devops/install
     tags: install
-  - name: Launch Machine
+  
+  - role: devops/healthchecks
+    tags: checks
+
+  - name: Run App
     role: devops/run
     tags: run

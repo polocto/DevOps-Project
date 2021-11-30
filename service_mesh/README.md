@@ -3,22 +3,23 @@
 - Start minikube if it not running
 
 ```
-$ minikube start --driver=docker
+ minikube start --driver=docker
 ```
 
 - In your project, download Istio & add the istioctl client to your path
 
 ```
-$ curl -L https://istio.io/downloadIstio | sh -
-$ cd istio-1.12.0
-$ export PATH=$PWD/bin:$PATH
+ curl -L https://istio.io/downloadIstio | sh -
+ cd istio-1.12.0
+ export PATH=$PWD/bin:$PATH
+ cd ../
 ```
 
 - Install Istio to your project & add a namespace label to instruct Istio to automatically inject
 
 ```
-$ istioctl install --set profile=demo -y
-$ kubectl label namespace default istio-injection=enabled
+ istioctl install --set profile=demo -y
+ kubectl label namespace default istio-injection=enabled
 ```
 
 Result :
@@ -27,7 +28,7 @@ Result :
 - Deploy the application
 
 ```
-$ kubectl apply -f kubernetes-manifest.yaml
+ kubectl apply -f kubernetes-manifest.yaml
 ```
 
 ![DeployementResult](/img/DeployementResult.png)
@@ -35,11 +36,12 @@ $ kubectl apply -f kubernetes-manifest.yaml
 - Wait that all the pods run & check the services
 
 ```
-$ kubectl get pod
-$ kubectl get services
+ kubectl get pod
+ kubectl get services
 ```
 
 Result:
+
 ![GetPod](/img/GetPodResult.png)
 
 ![GetServices](/img/GetSvcResult.png)
@@ -47,25 +49,25 @@ Result:
 - Determining the ingress IP and ports
 
 ```
-$ export INGRESS_PORT=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="http2")].nodePort}')
+ export INGRESS_PORT=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="http2")].nodePort}')
 
-$ export SECURE_INGRESS_PORT=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="https")].nodePort}')
+ export SECURE_INGRESS_PORT=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="https")].nodePort}')
 
-$ export INGRESS_HOST=$(minikube ip)
+ export INGRESS_HOST=$(minikube ip)
 
 ```
 
 - Run this line in an _OTHER_ terminal
 
 ```
-$ minikube tunnel
+ minikube tunnel
 ```
 
 - In the first terminal, to access to Kiali
 
 ```
-$ export GATEWAY_URL=$INGRESS_HOST:$INGRESS_PORT
-$ kubectl apply -f samples/addons
-$ kubectl rollout status deployment/kiali -n istio-system
-$ istioctl dashboard kiali
+ export GATEWAY_URL=$INGRESS_HOST:$INGRESS_PORT
+ kubectl apply -f samples/addons
+ kubectl rollout status deployment/kiali -n istio-system
+ istioctl dashboard kiali
 ```

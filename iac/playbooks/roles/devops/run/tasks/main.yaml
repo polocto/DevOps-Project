@@ -1,7 +1,6 @@
-- name: Redis-Server
-  shell: redis-server;
-
-- name: Lauch App
-  shell: npm start
+- name: Launch App
+  command: npm start
   args:
     chdir: /home/vagrant/userapi
+  async: 1000000000
+  poll: 0

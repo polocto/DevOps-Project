@@ -1,25 +1,21 @@
 ---
-- name: Install nodejs
-  shell: curl -L https://raw.githubusercontent.com/tj/n/master/bin/n -o n; bash n lts; npm install -g n
+- name: Download nodejs bin
+  get_url:
+    url: https://raw.githubusercontent.com/tj/n/master/bin/n
+    dest: /tmp/n
+
+- name: Run n
+  command: bash n lts
   args:
     chdir: /tmp
+
+- name: Install n dependencies
+  npm:
+    name: "n"
+    global: yes
+    path: /tmp
 
 - name: Install app Dependencies
   npm: 
     path: /home/vagrant/userapi
     ci: yes
-
-- name: Download Redis-Stable
-  get_url:
-    url: http://download.redis.io/redis-stable.tar.gz
-    dest: /tmp
-
-- name: Unzip Redis-Stable
-  unarchive:
-    src: /tmp/redis-stable.tar.gz
-    dest: /tmp
-
-- name: Run install on redis-stable
-  make:
-    chdir: /tmp/redis-stable
-    target: install
