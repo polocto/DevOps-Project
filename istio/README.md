@@ -73,3 +73,9 @@ Result:
  kubectl rollout status deployment/kiali -n istio-system
  istioctl dashboard kiali
 ```
+
+- Send request on this Url to see the traffic in Kiali
+```
+http://192.168.49.2:30000/
+```
+

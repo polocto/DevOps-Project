@@ -28,6 +28,6 @@ spec:
             exact: /
       route:
         - destination:
-            host: projet-devops
+            host: projet-devops-service
             port:
               number: 3000

@@ -1,0 +1,27 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: projet-devops-service
+spec:
+  hosts:
+    - projet-devops-service
+  http:
+    - route:
+        - destination:
+            host: projet-devops-service
+            subset: v1
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: redis
+spec:
+  hosts:
+    - redis
+  http:
+    - route:
+        - destination:
+            host: redis
+            subset: v1
+---
+
