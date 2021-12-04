@@ -70,6 +70,7 @@ spec:
     app: redis-deployment
   ports:
     - protocol: TCP
+      name: tcp
       port: 6379
       targetPort: 6379
 
@@ -89,15 +90,18 @@ metadata:
   name: projet-devops-deployment
   labels:
     app: projet-devops
+    version: v1
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: projet-devops
+      version: v1
   template:
     metadata:
       labels:
         app: projet-devops
+        version: v1
     spec:
       containers:
         - name: projet-devops
@@ -119,13 +123,17 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: projet-devops-service
+  name: projet-devops
+  labels:
+    app: projet-devops
+    service: projet-devops
 spec:
   selector:
     app: projet-devops
   type: LoadBalancer
   ports:
     - protocol: TCP
+      name: http
       port: 3000
       targetPort: 3000
       nodePort: 30000

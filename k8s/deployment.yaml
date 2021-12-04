@@ -4,6 +4,7 @@ metadata:
   name: projet-devops-deployment
   labels:
     app: projet-devops
+    version: v1
 spec:
   replicas: 1
   selector:
