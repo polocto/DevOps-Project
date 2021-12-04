@@ -87,7 +87,7 @@ data:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: projet-devops-deployment
+  name: projet-devops-deployment-v1
   labels:
     app: projet-devops
     version: v1
@@ -102,6 +102,42 @@ spec:
       labels:
         app: projet-devops
         version: v1
+    spec:
+      containers:
+        - name: projet-devops
+          image: polocto/projet-devops
+          ports:
+            - containerPort: 3000
+          env:
+            - name: REDIS_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: projet-devops-configmap
+                  key: redis_host
+            - name: REDIS_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: projet-devops-configmap
+                  key: redis_port
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: projet-devops-deployment-v2
+  labels:
+    app: projet-devops
+    version: v2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: projet-devops
+      version: v2
+  template:
+    metadata:
+      labels:
+        app: projet-devops
+        version: v2
     spec:
       containers:
         - name: projet-devops

@@ -10,6 +10,11 @@ spec:
         - destination:
             host: projet-devops
             subset: v1
+          weight: 75
+        - destination:
+            host: projet-devops
+            subset: v2
+          weight: 25
 
 ---
 apiVersion: networking.istio.io/v1alpha3
@@ -22,3 +27,6 @@ spec:
     - name: v1
       labels:
         version: v1
+    - name: v2
+      labels:
+        version: v2
