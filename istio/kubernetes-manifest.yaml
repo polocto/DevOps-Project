@@ -38,15 +38,18 @@ metadata:
   name: redis
   labels:
     app: redis-deployment
+    version: stable
 spec:
-  replicas: 3
+  replicas: 20
   selector:
     matchLabels:
       app: redis-deployment
+      version: stable
   template:
     metadata:
       labels:
         app: redis-deployment
+        version: stable
     spec:
       volumes:
         - name: my-vol
@@ -92,7 +95,7 @@ metadata:
     app: projet-devops
     version: v1
 spec:
-  replicas: 1
+  replicas: 6
   selector:
     matchLabels:
       app: projet-devops
@@ -128,7 +131,7 @@ metadata:
     app: projet-devops
     version: v2
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: projet-devops
