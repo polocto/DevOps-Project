@@ -10,7 +10,7 @@
 
 ```
  curl -L https://istio.io/downloadIstio | sh -
- cd istio-1.12.0
+ cd istio-1.12.1
  export PATH=$PWD/bin:$PATH
  cd ../
 ```
@@ -28,8 +28,9 @@ Result :
 - Deploy the application
 
 ```
- kubectl apply -f kubernetes-manifest.yaml
- kubectl apply -f gateway.yaml
+ kubectl apply -f istio/kubernetes-manifest.yaml
+ kubectl apply -f istio/gateway.yaml
+ kubectl apply -f istio/virtual-service-all-v1
 ```
 
 ![DeployementResult](/img/DeployementResult.png)
@@ -69,7 +70,7 @@ Result:
 
 ```
  export GATEWAY_URL=$INGRESS_HOST:$INGRESS_PORT
- kubectl apply -f samples/addons
+ kubectl apply -f istio-1.12.1/samples/addons
  kubectl rollout status deployment/kiali -n istio-system
  istioctl dashboard kiali
 ```
