@@ -30,7 +30,7 @@ Result :
 ```
  kubectl apply -f istio/kubernetes-manifest.yaml
  kubectl apply -f istio/gateway.yaml
- kubectl apply -f istio/virtual-service-all-v1
+ kubectl apply -f istio/virtual-service-all-v1.yaml
 ```
 
 ![DeployementResult](/img/DeployementResult.png)
