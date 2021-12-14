@@ -46,6 +46,20 @@ kubectl port-forward svc/grafana -n istio-system 3000
 
 - Go to 127.0.0.1/3000
 
+Control panel :
+
 ![istioControlPanel](/img/istioControlPanel.png)
 
+Performance panel :
+
 ![istioPerformance](/img/istioPerformance.png)
+
+Alert :
+
+![Alertpannel](/img/Alertpannel.png)
+
+![TestRuleAlert](/img/TestRuleAlert.png)
+
+![AlertNotCre](/img/AlertNotCre.png)
+
+![ChannelCreation](/img/ChannelCreation.png)
