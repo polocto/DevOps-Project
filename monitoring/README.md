@@ -1,4 +1,6 @@
-# Installation
+# Monitoring
+
+## Installation
 
 Prometheus :
 
@@ -12,11 +14,11 @@ Grafana :
 kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.12/samples/addons/grafana.yaml
 ```
 
-# Usage
+## Usage
 
 - Follow the steps of istio first
 
-## Use Prometheus :
+### Use Prometheus :
 
 ```
 kubectl port-forward svc/prometheus -n istio-system 9090
@@ -38,7 +40,7 @@ Services discovery :
 
 ![Services discovery](/img/SvcDiscovery.png)
 
-## Use Grafana :
+### Use Grafana :
 
 ```
 kubectl port-forward svc/grafana -n istio-system 3000

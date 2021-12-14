@@ -42,7 +42,7 @@ gh repo clone polocto/Project-SI
 
 - [Install istio](./istio/README.md#Installation)
 
--[Install Prometheus & Grafana for the monitoring](./monitoring/README.md#Installation)
+- [Install Prometheus & Grafana for the monitoring](./monitoring/README.md#Installation)
 
 ### Usage
 
