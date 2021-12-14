@@ -1,4 +1,5 @@
 # Deploy the application with Istio
+
 ## Installation
 
 - Start minikube if it not running
@@ -38,7 +39,6 @@ Result :
 
 ![DeployementResult](/img/servicesVSGate.png)
 
-
 - Wait that all the pods run & check the services
 
 ```
@@ -49,7 +49,6 @@ Result :
 Result:
 
 ![GetPod](/img/podSvc.png)
-
 
 - Determining the ingress IP and ports
 
@@ -78,6 +77,7 @@ Result:
 ```
 
 - Send request on this Url to see the traffic in Kiali
+
 ```
 http://192.168.49.2:30000/
 ```
@@ -85,6 +85,8 @@ http://192.168.49.2:30000/
 Result :
 
 ![KialiOverview](/img/kialiOverw.png)
+![KialiApp](/img/App.png)
 ![KialiGraph](/img/graph.png)
-![kialiSvc](/img/SvcConfig.png)
+![KialiWorkload](/img/Wkld.png)
+![kialiSvc](/img/Svc.png)
 ![kialiIstioConf](/img/istioConfig.png)
