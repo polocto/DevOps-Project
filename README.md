@@ -32,6 +32,8 @@ gh repo clone polocto/Project-SI
 
 - [Install Minikube](https://minikube.sigs.k8s.io/docs/start/) for Kubernetes
 
+- [Install istio](./istio/README.md#Installation)
+
 
 ### Usage
 - [Start userapi](./userapi/README.md#usage)
@@ -52,6 +54,8 @@ docker-compose up
 Server on http://localhost:5000
 
 - [Use a Kubernertes cluster](./k8s/README.md#usage)
+
+- [Use Istio service meshing](./istio/README.md#Usage)
 
 
 ### Test

@@ -1,4 +1,5 @@
 # Deploy the application with Istio
+## Installation
 
 - Start minikube if it not running
 
@@ -25,6 +26,8 @@
 Result :
 ![InstallIstioResult](/img/IstioInstallresult.png)
 
+## Usage
+
 - Deploy the application
 
 ```
@@ -33,8 +36,8 @@ Result :
  kubectl apply -f istio/virtual-service-all-v1.yaml
 ```
 
-![DeployementResult](/img/DeployementResult.png)
-![DeployementResult1](/img/Depl.png)
+![DeployementResult](/img/servicesVSGate.png)
+
 
 - Wait that all the pods run & check the services
 
@@ -45,9 +48,8 @@ Result :
 
 Result:
 
-![GetPod](/img/GetPodResult.png)
+![GetPod](/img/podSvc.png)
 
-![GetServices](/img/GetSvcResult.png)
 
 - Determining the ingress IP and ports
 
@@ -80,3 +82,9 @@ Result:
 http://192.168.49.2:30000/
 ```
 
+Result :
+
+![KialiOverview](/img/kialiOverw.png)
+![KialiGraph](/img/graph.png)
+![kialiSvc](/img/SvcConfig.png)
+![kialiIstioConf](/img/istioConfig.png)
