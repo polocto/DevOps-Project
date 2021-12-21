@@ -38,5 +38,39 @@ module.exports = {
           callback(new Error("No user with username: "+username),null);
       });
 
+  },
+  update: (username, modification, callback) => {
+    if(!username)
+      return callback(new Error("Wrong username parameter"), null);
+
+    const keys = Object.keys(modification);
+
+    if(keys.some( key => key.match("username")) && !modification.username.match(username))
+      return callback(new Error("You are not allowed to modify the username"));
+
+    client.hgetall(username,(err,res)=>{
+      if(err) return callback(err,null);
+      if(!res) 
+        return callback(new Error("No user with username: "+username),null);
+      else
+      {
+        keys.map(key => {
+          res[key] = modification[key];
+        });
+        client.hmset(username,res, (err,res)=>{
+          if(err) return callback(err,null);
+          return callback(null,res);
+        });
+      }
+    });
+  },
+  delete: (username, callback) => {
+    if(!username)
+      return callback(new Error("Wrong username parameter"), null)
+    
+      client.del(username,(err,res) => {
+        if(!res) return callback(new Error("User doesn't exist"),null);
+        return callback(null,res);
+      })
   }
 };

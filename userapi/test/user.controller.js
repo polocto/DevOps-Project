@@ -92,4 +92,96 @@ describe('User', () => {
     });
   
   })
+
+
+  describe('Update', () => {
+
+    beforeEach(() => {
+      db.flushdb();
+    })
+
+    it('cannot update username',(done)=>{
+      const user = {
+        username: 'sergkudinov',
+        firstname: 'Sergei',
+        lastname: 'Kudinov'
+      };
+      userController.create(user, () => {
+        const update = {
+          username: "polocto"
+        }
+        userController.update(user.username,update,(err,result) => {
+          expect(err).to.not.be.equal(null);
+          expect(result).to.be.eql(undefined);
+          done();
+        });
+      });
+    })
+
+    it('modify any prorieties apart username', (done)=>{
+      const user = {
+        username: 'sergkudinov',
+        firstname: 'Sergei',
+        lastname: 'Kudinov'
+      };
+      userController.create(user, () => {
+        const update = {
+          firstname: "Paul",
+          lastname: "Sade"
+        }
+        userController.update(user.username,update,(err,result) => {
+          expect(err).to.be.equal(null);
+          expect(result).to.not.be.equal(null);
+          done();
+        });
+      });
+    })
+
+    it("cannot update a user that doesn't exist", (done) => {
+      const user = {
+        username: 'sergkudinov',
+        firstname: 'Sergei',
+        lastname: 'Kudinov'
+      };
+      userController.update(user.username,user,(err,result) => {
+        expect(err).to.not.be.equal(null);
+        expect(result).to.be.equal(null);
+        done();
+      });
+    })
+  })
+
+  describe('Delete', () => {
+
+    it('delete a user', (done)=>{
+      const user = {
+        username: 'sergkudinov',
+        firstname: 'Sergei',
+        lastname: 'Kudinov'
+      };
+      userController.create(user, () => {
+        userController.delete(user.username,(err,result) => {
+          expect(err).to.be.equal(null);
+          expect(result).not.to.be.equal(null);
+          userController.get(user.username,(err,result) => {
+            expect(err).to.not.be.equal(null);
+            expect(result).to.be.eql(null);
+            done();
+          });
+        });
+      })
+    })
+    it("cannot delete a user that doesn't exist", (done)=>{
+      const user = {
+        username: 'sergkudinov',
+        firstname: 'Sergei',
+        lastname: 'Kudinov'
+      };
+      userController.delete(user.username,(err,result) => {
+        expect(err).to.not.be.equal(null);
+        expect(result).to.be.equal(null);
+        done();
+        });
+      });
+    })
 })
