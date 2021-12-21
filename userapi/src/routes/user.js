@@ -39,6 +39,44 @@ userRouter
       };
       resp.status(200).json(respObj);
     });
-  });
+  })
+  .put('/:username', (req,resp) => {
+    const username = req.params.username;
+    userController.update(username,req.body, (err,res) => {
+      if(err)
+      {
+        return resp.status(400).json({
+          status: "error",
+          msg: err.message
+        })
+      }
+      else
+      {
+        return resp.status(200).json({
+          status: "success",
+          msg: res
+        })
+      }
+    })
+  })
+  .delete('/:username', (req,resp) => {
+    const username = req.params.username;
+    userController.delete(username, (err,res) => {
+      if(err)
+      {
+        return resp.status(400).json({
+          status: "error",
+          msg: err.message
+        })
+      }
+      else
+      {
+        return resp.status(200).json({
+          status: "success",
+          msg: res
+        })
+      }
+    })
+  })
   
 module.exports = userRouter;
