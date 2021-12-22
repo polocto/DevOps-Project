@@ -1,6 +1,15 @@
 # Report / screenshots
 
-## Istio result :
+## Vagrant result:
+
+![Vagrant Ansible](/img/vagrantAnsible.png)
+- We can see that every thing runs and is well installed with healthcheck result provide at the bottom of the screen shot
+
+![Vagrant result run in browser](/img/vagrantConnectionRedis.png)
+
+- We can see that it is well connected to redis and that there is no user serg in the database
+
+## Istio result:
 
 ![KialiOverview](/img/kialiOverw.png)
 - here we can see the two namespace of the project. The namespace of our application and its microservices named default and the namespace of the istio-system services.
@@ -17,7 +26,7 @@
 ![kialiSvc](/img/Svc.png)
 ![kialiIstioConf](/img/istioConfig.png)
 
-## Monitoring result
+## Monitoring result:
 
 ### Prometheus
 

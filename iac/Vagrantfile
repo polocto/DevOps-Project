@@ -25,7 +25,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     server.vm.synced_folder "../userapi", "/home/vagrant/userapi"
 
-    server.vm.network "private_network", ip: "20.20.20.2"
+    server.vm.network "private_network", ip: "192.168.56.2"
 
     server.vm.provision "ansible_local" do |ansible|
       ansible.playbook = "playbooks/run.yml"

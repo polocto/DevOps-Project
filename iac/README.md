@@ -23,7 +23,7 @@ If you don't have any can install [VirtualBox](https://www.virtualbox.org/wiki/D
 ```sh
 vagrant up
 ```
-Open in your browser the URL - http://20.20.20.2
+Once command is finished tou can open in your browser the URL - http://192.168.56.2:3000/
 
 2. Shutdown the VM
 ```sh
