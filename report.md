@@ -1,5 +1,14 @@
 # Report / screenshots
 
+## CI/CD
+
+- [Github action](https://github.com/polocto/Project-SI/actions), if test valid deploy on heroku and dockerhub
+![Github Action](/img/ci-cd-github-action.png)
+- [Image on dockerhub](https://hub.docker.com/repository/docker/polocto/projet-devops)
+![Docker Deployment](/img/ci-cd-image-docker.png)
+- [Deployment on heroku](https://dashboard.heroku.com/apps)
+![Heroku Deployment](/img/heroku.png)
+
 ## Vagrant result:
 
 ![Vagrant Ansible](/img/vagrantAnsible.png)

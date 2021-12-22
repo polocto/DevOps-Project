@@ -6,10 +6,7 @@ This project let us apply what we have learn since the begining of the year
 
 ## Screenshots
 
-### CI/CD
-
-![Github Action](./img/githubAction.png)
-![Heroku Integration](./img/heroku.png)
+- [Results report with screen shots](/REPORT.md)
 
 ## Instructions
 
