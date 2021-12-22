@@ -82,9 +82,7 @@ Server on http://localhost:5000
 - [Docker Hub](https://hub.docker.com)
 - [Kubernetes](https://kubernetes.io/)
 
-## Deploy the application with Istio
 
-- [Steps to deploy the app](/service_mesh/README.md)
 
 ## Bonus
 
