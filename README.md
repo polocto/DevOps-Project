@@ -73,12 +73,16 @@ Server on http://localhost:5000
 
 ## Platforms & Tools
 
+- [Node.js](https://nodejs.org/en/)
 - [Github Action](https://github.com/polocto/Project-SI/actions)
-- [Heroku](https://dashboard.heroku.com/apps)
-- [Vagrant _(centos/7)_](https://www.vagrantup.com/)
+- [Heroku](https://project-dev-ops.herokuapp.com/)
+- [Vagrant _(ubuntu/trusty64)_](https://www.vagrantup.com/)
+    - [Ansible](https://docs.ansible.com/ansible/latest/index.html)
 - [Docker Hub](https://hub.docker.com)
 - [Kubernetes](https://kubernetes.io/)
-
+- [Istio](https://istio.io/)
+    - [Kiali](https://kiali.io/)
+    - Prometheus
 
 
 ## Bonus
@@ -86,9 +90,9 @@ Server on http://localhost:5000
 - Web App
     - CRUD
     - Storage in redis database
-    - Develop more test (22 in total)
+    - Develop more [test](/userapi/test) (22 in total)
 - CI/CD
-    - Build and Push docker image on docker hub
+    - [Build and Push docker image on docker hub](/.github/workflows/main.yaml)
 - Kubernetes
     - Used [configmap](/k8s/config-map.yaml) to configure the add deployment
 

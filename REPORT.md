@@ -21,7 +21,7 @@ look tests bellow.
 ![Github Action](/img/ci-cd-github-action.png)
 - [Image on dockerhub](https://hub.docker.com/r/polocto/projet-devops)
 ![Docker Deployment](/img/ci-cd-image-docker.png)
-- [Deployment on heroku](https://dashboard.heroku.com/apps)
+- [Deployment on heroku](https://project-dev-ops.herokuapp.com/)
 ![Heroku Deployment](/img/heroku.png)
 
 ## 3. Vagrant result:
