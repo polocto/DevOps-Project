@@ -83,6 +83,15 @@ Server on http://localhost:5000
 
 ## Bonus
 
+- Web App
+    - CRUD
+    - Storage in redis database
+    - Develop more test (22 in total)
+- CI/CD
+    - Build and Push docker image on docker hub
+- Kubernetes
+    - Used [configmap](/k8s/config-map.yaml) to configure the add deployment
+
 ## Credits
 
 Paul SADE & Mathis CAMARD
