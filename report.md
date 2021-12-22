@@ -19,7 +19,7 @@ look tests bellow.
 
 - [Github action](https://github.com/polocto/Project-SI/actions), if test valid deploy on heroku and dockerhub
 ![Github Action](/img/ci-cd-github-action.png)
-- [Image on dockerhub](https://hub.docker.com/repository/docker/polocto/projet-devops)
+- [Image on dockerhub](https://hub.docker.com/r/polocto/projet-devops)
 ![Docker Deployment](/img/ci-cd-image-docker.png)
 - [Deployment on heroku](https://dashboard.heroku.com/apps)
 ![Heroku Deployment](/img/heroku.png)
@@ -37,12 +37,21 @@ look tests bellow.
 
 - Create a docker Image
 
+![Docker Image](/img/docker-image.png)
 
 - Push to Docker Hub
 
+[![](/img/ci-cd-image-docker.png)](https://hub.docker.com/r/polocto/projet-devops)
 
 ## 5. Docker Compose
 
+- Lauch Docker Compose
+
+![Lauch docker-compose](/img/compose-launch.png)
+
+- Connect to the app with docker-compos
+
+![connect in browser](/img/compose-connect.png)
 
 ## 6. Kubernetes
 
