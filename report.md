@@ -3,8 +3,17 @@
 ## 1. Web Application
 
 - CRUD
+We can now [create, read, upadate and delete](/userapi/src/controllers) in controllers
+and [create, read, upadate and delete](/userapi/src/routes) in routes too
+look tests bellow.
+
+![App Lauching](/img/app-launch.png)
+
+![App conection to redis](/img/app-redis.png)
 
 - Tests
+
+![App Tests](/img/app-test.png)
 
 ## 2. CI/CD
 
